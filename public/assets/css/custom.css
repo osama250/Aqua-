@@ -1,0 +1,36 @@
+#kt_app_header_container
+{
+    background-color: #f1f2f6 !important;
+}
+#kt_app_toolbar
+{
+
+    background-color: #f1f2f6;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.app-sidebar-menu{
+    background-color: #2f3542;
+}
+
+.app-sidebar-logo {
+    background-color: #2f3542;
+}
+
+#kt_app_footer{
+    background-color: #f1f2f6;
+}
+
+/* .active-link {
+    background-color: red !important;
+    color: red !important;
+} */
+/* .menu-link.active {
+    background-color: red !important;
+} */
+.tst {
+    background-color: aqua !important;
+}
+

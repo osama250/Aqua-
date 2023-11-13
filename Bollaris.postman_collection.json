@@ -1,0 +1,2765 @@
+{
+	"info": {
+		"_postman_id": "3cd2b6d9-cd6d-4764-a0b2-b5ab2e38f1c9",
+		"name": "Bollaris",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24330592"
+	},
+	"item": [
+		{
+			"name": "Client",
+			"item": [
+				{
+					"name": "SignUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "M Mohsen",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "m.mohsen@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "confirm-password",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{bollaris_url}}ar/api/signup",
+							"host": [
+								"{{bollaris_url}}ar"
+							],
+							"path": [
+								"api",
+								"signup"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SignUp Validation Errors",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{bollaris_url}}en/api/signup?name&email",
+									"host": [
+										"{{bollaris_url}}en"
+									],
+									"path": [
+										"api",
+										"signup"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": null
+										},
+										{
+											"key": "email",
+											"value": null
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 31 Jul 2023 06:51:09 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 31 Jul 2023 06:51:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": {\n        \"name\": [\n            \" name مطلوب  .\"\n        ],\n        \"email\": [\n            \" email مطلوب  .\"\n        ],\n        \"password\": [\n            \" password مطلوب  .\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "SignUp Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{bollaris_url}}en/api/signup?name=M Mohsen&email=m.mohsen@gmail.com&password=12345678&confirm-password=12345678",
+									"host": [
+										"{{bollaris_url}}en"
+									],
+									"path": [
+										"api",
+										"signup"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "M Mohsen"
+										},
+										{
+											"key": "email",
+											"value": "m.mohsen@gmail.com"
+										},
+										{
+											"key": "password",
+											"value": "12345678"
+										},
+										{
+											"key": "confirm-password",
+											"value": "12345678"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 31 Jul 2023 07:21:25 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 31 Jul 2023 07:21:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Account Created Successfully Check Your Email To Activate Your Account \"\n}"
+						}
+					]
+				},
+				{
+					"name": "Verify",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "m.mohsen@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "116637",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{bollaris_url}}en/api/verify",
+							"host": [
+								"{{bollaris_url}}en"
+							],
+							"path": [
+								"api",
+								"verify"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Verify Validation Errors",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{bollaris_url}}en/api/verify",
+									"host": [
+										"{{bollaris_url}}en"
+									],
+									"path": [
+										"api",
+										"verify"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 31 Jul 2023 07:29:52 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 31 Jul 2023 07:29:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": {\n        \"email\": [\n            \"The email field is required.\"\n        ],\n        \"code\": [\n            \"The code field is required.\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "Verify Invalid Code",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{bollaris_url}}en/api/verify?email=m.mohsen@gmail.com&code=5555",
+									"host": [
+										"{{bollaris_url}}en"
+									],
+									"path": [
+										"api",
+										"verify"
+									],
+									"query": [
+										{
+											"key": "email",
+											"value": "m.mohsen@gmail.com"
+										},
+										{
+											"key": "code",
+											"value": "5555"
+										}
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 31 Jul 2023 07:30:52 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 31 Jul 2023 07:30:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Invalid Code\"\n}"
+						},
+						{
+							"name": "Verify Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{bollaris_url}}en/api/verify?email=m.mohsen@gmail.com&code=116637",
+									"host": [
+										"{{bollaris_url}}en"
+									],
+									"path": [
+										"api",
+										"verify"
+									],
+									"query": [
+										{
+											"key": "email",
+											"value": "m.mohsen@gmail.com"
+										},
+										{
+											"key": "code",
+											"value": "116637"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 31 Jul 2023 07:31:10 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 31 Jul 2023 07:31:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Account Verified Successfully Please Login . . .\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "m.mohsen@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{bollaris_url}}en/api/login",
+							"host": [
+								"{{bollaris_url}}en"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login Invalid Credentials",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{bollaris_url}}en/api/login",
+									"host": [
+										"{{bollaris_url}}en"
+									],
+									"path": [
+										"api",
+										"login"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 31 Jul 2023 07:40:18 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 31 Jul 2023 07:40:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": \"Wrong Credentials Email Or Passwrod Is Wrong . . .\"\n}"
+						},
+						{
+							"name": "Login Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "m.mohsen@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "12345678",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{bollaris_url}}en/api/login",
+									"host": [
+										"{{bollaris_url}}en"
+									],
+									"path": [
+										"api",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 31 Jul 2023 07:42:01 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 31 Jul 2023 07:42:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvZW4vYXBpL2xvZ2luIiwiaWF0IjoxNjkwNzg5MzIwLCJuYmYiOjE2OTA3ODkzMjEsImp0aSI6IklxZ3A4ZzkwQmM0RXpuV2wiLCJzdWIiOiI0IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.PJ5VD0yF-FeoYQFu05PAvgOS5IEJa9bZbIrpVZLAc3Y\",\n    \"token_type\": \"bearer\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{bollaris_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{bollaris_url}}ar/api/profile",
+							"host": [
+								"{{bollaris_url}}ar"
+							],
+							"path": [
+								"api",
+								"profile"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Profile",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{bollaris_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{bollaris_url}}en/api/profile",
+									"host": [
+										"{{bollaris_url}}en"
+									],
+									"path": [
+										"api",
+										"profile"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 31 Jul 2023 07:47:42 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 31 Jul 2023 07:47:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"profile\": {\n        \"id\": 4,\n        \"name\": \"M Mohsen\",\n        \"email\": \"m.mohsen@gmail.com\",\n        \"email_verified_at\": \"2023-07-31T00:00:00.000000Z\",\n        \"code\": 116637,\n        \"created_at\": \"2023-07-31T07:21:22.000000Z\",\n        \"updated_at\": \"2023-07-31T07:31:10.000000Z\"\n    }\n}"
+						},
+						{
+							"name": "Profile In Active Account Middleware Message",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{bollaris_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{bollaris_url}}ar/api/profile",
+									"host": [
+										"{{bollaris_url}}ar"
+									],
+									"path": [
+										"api",
+										"profile"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 03 Aug 2023 06:45:36 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 03 Aug 2023 06:45:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"تم الغاء تفعيل حسابك\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{bollaris_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{bollaris_url}}en/api/logout",
+							"host": [
+								"{{bollaris_url}}en"
+							],
+							"path": [
+								"api",
+								"logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Logout",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{bollaris_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{bollaris_url}}en/api/logout",
+									"host": [
+										"{{bollaris_url}}en"
+									],
+									"path": [
+										"api",
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 31 Jul 2023 07:51:14 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 31 Jul 2023 07:51:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Logged Out Successfully . . .\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Forget Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "m.mohsen@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{bollaris_url}}en/api/forget-password",
+							"host": [
+								"{{bollaris_url}}en"
+							],
+							"path": [
+								"api",
+								"forget-password"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Forget Password Validation Errors",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{bollaris_url}}en/api/forget-password",
+									"host": [
+										"{{bollaris_url}}en"
+									],
+									"path": [
+										"api",
+										"forget-password"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 31 Jul 2023 08:04:54 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 31 Jul 2023 08:04:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": {\n        \"email\": [\n            \"The email field is required.\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "Forget Password Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "m.mohsen@gmail.com",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{bollaris_url}}en/api/forget-password",
+									"host": [
+										"{{bollaris_url}}en"
+									],
+									"path": [
+										"api",
+										"forget-password"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 31 Jul 2023 08:06:24 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 31 Jul 2023 08:06:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Please Check Your Email . . .\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Confirm Code",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "m.mohsen@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "406207",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "confirm-password",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{bollaris_url}}en/api/confirm-code",
+							"host": [
+								"{{bollaris_url}}en"
+							],
+							"path": [
+								"api",
+								"confirm-code"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Confirm Code Validation Errors",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{bollaris_url}}en/api/confirm-code",
+									"host": [
+										"{{bollaris_url}}en"
+									],
+									"path": [
+										"api",
+										"confirm-code"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 31 Jul 2023 08:14:30 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 31 Jul 2023 08:14:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": {\n        \"email\": [\n            \"The email field is required.\"\n        ],\n        \"code\": [\n            \"The code field is required.\"\n        ],\n        \"password\": [\n            \"The password field is required.\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "Confirm Code Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "m.mohsen@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "code",
+											"value": "811139",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"type": "text"
+										},
+										{
+											"key": "confirm-password",
+											"value": "password",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{bollaris_url}}en/api/confirm-code",
+									"host": [
+										"{{bollaris_url}}en"
+									],
+									"path": [
+										"api",
+										"confirm-code"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 31 Jul 2023 08:17:50 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 31 Jul 2023 08:17:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Password Changed Successfully . . .\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Change Password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{bollaris_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "old_password",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "pass123456",
+									"type": "text"
+								},
+								{
+									"key": "confirm-password",
+									"value": "pass123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{bollaris_url}}en/api/change-password",
+							"host": [
+								"{{bollaris_url}}en"
+							],
+							"path": [
+								"api",
+								"change-password"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Change Password Validation Errors",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{bollaris_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{bollaris_url}}en/api/change-password",
+									"host": [
+										"{{bollaris_url}}en"
+									],
+									"path": [
+										"api",
+										"change-password"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 31 Jul 2023 08:54:00 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 31 Jul 2023 08:54:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": {\n        \"old_password\": [\n            \"The old password field is required.\"\n        ],\n        \"password\": [\n            \"The password field is required.\"\n        ],\n        \"confirm-password\": [\n            \"The confirm-password field is required.\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "Change Password Old Password Wrong",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{bollaris_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "old_password",
+											"value": "test",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "pass123456",
+											"type": "text"
+										},
+										{
+											"key": "confirm-password",
+											"value": "pass123456",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{bollaris_url}}en/api/change-password",
+									"host": [
+										"{{bollaris_url}}en"
+									],
+									"path": [
+										"api",
+										"change-password"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 31 Jul 2023 08:54:47 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 31 Jul 2023 08:54:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Old Password Is Wrong . . .\"\n}"
+						},
+						{
+							"name": "Change Password Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{bollaris_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "old_password",
+											"value": "password",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "pass123456",
+											"type": "text"
+										},
+										{
+											"key": "confirm-password",
+											"value": "pass123456",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{bollaris_url}}en/api/change-password",
+									"host": [
+										"{{bollaris_url}}en"
+									],
+									"path": [
+										"api",
+										"change-password"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 31 Jul 2023 08:55:06 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 31 Jul 2023 08:55:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Password Changed Successfully . . .\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Profile",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{bollaris_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "M M Osman",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "m.m.osman@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{bollaris_url}}en/api/update-profile",
+							"host": [
+								"{{bollaris_url}}en"
+							],
+							"path": [
+								"api",
+								"update-profile"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Profile Validation Errors",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{bollaris_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{bollaris_url}}en/api/update-profile",
+									"host": [
+										"{{bollaris_url}}en"
+									],
+									"path": [
+										"api",
+										"update-profile"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 31 Jul 2023 09:01:54 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 31 Jul 2023 09:01:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": {\n        \"name\": [\n            \"The name field is required.\"\n        ],\n        \"email\": [\n            \"The email field is required.\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "Update Profile Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{bollaris_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "M M Osman",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "m.m.osman@gmail.com",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{bollaris_url}}en/api/update-profile",
+									"host": [
+										"{{bollaris_url}}en"
+									],
+									"path": [
+										"api",
+										"update-profile"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 31 Jul 2023 09:02:33 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 31 Jul 2023 09:02:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Updated Successfully . . .\",\n    \"profile\": {\n        \"id\": 4,\n        \"name\": \"M M Osman\",\n        \"email\": \"m.m.osman@gmail.com\",\n        \"email_verified_at\": \"2023-07-31T00:00:00.000000Z\",\n        \"code\": 116637,\n        \"reset_code\": 811139,\n        \"created_at\": \"2023-07-31T07:21:22.000000Z\",\n        \"updated_at\": \"2023-07-31T09:02:33.000000Z\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "General",
+			"item": [
+				{
+					"name": "About Us",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{bollaris_url}}ar/api/about-us",
+							"host": [
+								"{{bollaris_url}}ar"
+							],
+							"path": [
+								"api",
+								"about-us"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "AboutUs Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{bollaris_url}}ar/api/about-us",
+									"host": [
+										"{{bollaris_url}}ar"
+									],
+									"path": [
+										"api",
+										"about-us"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 01 Aug 2023 10:26:36 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 01 Aug 2023 10:26:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"aboutus\": {\n        \"id\": 1,\n        \"created_at\": \"2023-08-01T10:06:22.000000Z\",\n        \"updated_at\": \"2023-08-01T07:37:53.000000Z\",\n        \"title\": \"من نحن\",\n        \"description\": \"سيبسيبسيبسيب\",\n        \"translations\": [\n            {\n                \"id\": 1,\n                \"about_us_id\": 1,\n                \"locale\": \"en\",\n                \"title\": \"Who is Bollaris\",\n                \"description\": \"<p>sdfsdfsdfsdf</p>\",\n                \"created_at\": \"2023-08-01T11:05:41.000000Z\",\n                \"updated_at\": \"2023-08-01T08:39:21.000000Z\"\n            },\n            {\n                \"id\": 2,\n                \"about_us_id\": 1,\n                \"locale\": \"ar\",\n                \"title\": \"من نحن\",\n                \"description\": \"سيبسيبسيبسيب\",\n                \"created_at\": \"2023-08-01T11:05:41.000000Z\",\n                \"updated_at\": \"2023-08-01T11:05:41.000000Z\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Social Media",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{bollaris_url}}ar/api/socials",
+							"host": [
+								"{{bollaris_url}}ar"
+							],
+							"path": [
+								"api",
+								"socials"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Social Media Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{bollaris_url}}ar/api/socials",
+									"host": [
+										"{{bollaris_url}}ar"
+									],
+									"path": [
+										"api",
+										"socials"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 01 Aug 2023 13:09:00 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 01 Aug 2023 13:09:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"socials\": [\n        {\n            \"id\": 4,\n            \"name\": \"Facebook\",\n            \"value\": \"https:/www.facebook.com\",\n            \"created_at\": \"2023-08-01T13:05:54.000000Z\",\n            \"updated_at\": \"2023-08-01T13:06:03.000000Z\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Twitter\",\n            \"value\": \"http://www.twitter.com\",\n            \"created_at\": \"2023-08-01T13:06:22.000000Z\",\n            \"updated_at\": \"2023-08-01T13:06:22.000000Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Coupones",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{bollaris_url}}en/api/coupones",
+							"host": [
+								"{{bollaris_url}}en"
+							],
+							"path": [
+								"api",
+								"coupones"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Coupones Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{bollaris_url}}en/api/coupones",
+									"host": [
+										"{{bollaris_url}}en"
+									],
+									"path": [
+										"api",
+										"coupones"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 02 Aug 2023 10:02:09 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 02 Aug 2023 10:02:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"coupones\": [\n        {\n            \"id\": 3,\n            \"name\": \"Madeson Carroll\",\n            \"limit\": 61,\n            \"remaining\": 61,\n            \"start_date\": \"2023-08-03\",\n            \"end_date\": \"2023-08-15\",\n            \"status\": \"1\",\n            \"created_at\": \"2023-08-02T08:50:44.000000Z\",\n            \"updated_at\": \"2023-08-02T08:50:44.000000Z\",\n            \"statustype\": \"active\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Sliders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{bollaris_url}}ar/api/sliders",
+							"host": [
+								"{{bollaris_url}}ar"
+							],
+							"path": [
+								"api",
+								"sliders"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Sliders Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{bollaris_url}}ar/api/sliders",
+									"host": [
+										"{{bollaris_url}}ar"
+									],
+									"path": [
+										"api",
+										"sliders"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 03 Aug 2023 12:15:07 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 03 Aug 2023 12:15:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"sliders\": [\n        {\n            \"id\": 7,\n            \"media\": \"http://127.0.0.1:8000/uploads/slider/1691064127.pexels-pixabay-856787-1920x1080-30fps.mp4\",\n            \"type\": \"video\",\n            \"created_at\": \"2023-08-03T11:58:27.000000Z\",\n            \"updated_at\": \"2023-08-03T12:02:07.000000Z\"\n        },\n        {\n            \"id\": 8,\n            \"media\": \"http://127.0.0.1:8000/uploads/slider/1691063926.LOGO-01.png\",\n            \"type\": \"image\",\n            \"created_at\": \"2023-08-03T11:58:46.000000Z\",\n            \"updated_at\": \"2023-08-03T11:58:46.000000Z\"\n        },\n        {\n            \"id\": 10,\n            \"media\": \"http://127.0.0.1:8000/uploads/slider/1691064039.trophy(1)1.png\",\n            \"type\": \"image\",\n            \"created_at\": \"2023-08-03T12:00:39.000000Z\",\n            \"updated_at\": \"2023-08-03T12:00:39.000000Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Settings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{bollaris_url}}en/api/settings",
+							"host": [
+								"{{bollaris_url}}en"
+							],
+							"path": [
+								"api",
+								"settings"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Settings Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{bollaris_url}}ar/api/settings",
+									"host": [
+										"{{bollaris_url}}ar"
+									],
+									"path": [
+										"api",
+										"settings"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 06 Aug 2023 08:21:00 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 06 Aug 2023 08:21:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"settings\": {\n        \"id\": 1,\n        \"app_name\": \"Bollaris\",\n        \"logo\": \"http://127.0.0.1:8000/uploads/setting/1691305955.LOGO-01.png\",\n        \"footer_logo\": \"http://127.0.0.1:8000/uploads/setting/1691305955.LOGO-04.png\",\n        \"location\": \"https://www.googlemap.com/lol\",\n        \"points_price\": 25,\n        \"created_at\": \"2023-08-06T07:05:49.000000Z\",\n        \"updated_at\": \"2023-08-06T07:12:35.000000Z\",\n        \"footer_description\": \"<p><strong>نظام الحجوزات رقم واحد</strong></p>\",\n        \"translations\": [\n            {\n                \"id\": 1,\n                \"setting_id\": 1,\n                \"locale\": \"ar\",\n                \"footer_description\": \"<p><strong>نظام الحجوزات رقم واحد</strong></p>\",\n                \"created_at\": \"2023-08-06T11:03:22.000000Z\",\n                \"updated_at\": \"2023-08-06T08:12:02.000000Z\"\n            },\n            {\n                \"id\": 2,\n                \"setting_id\": 1,\n                \"locale\": \"en\",\n                \"footer_description\": \"<p><strong>#1 Booking System</strong></p>\",\n                \"created_at\": \"2023-08-06T11:03:22.000000Z\",\n                \"updated_at\": \"2023-08-06T08:12:02.000000Z\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Galleries",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{bollaris_url}}ar/api/galleries",
+							"host": [
+								"{{bollaris_url}}ar"
+							],
+							"path": [
+								"api",
+								"galleries"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Galleries Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{bollaris_url}}ar/api/galleries",
+									"host": [
+										"{{bollaris_url}}ar"
+									],
+									"path": [
+										"api",
+										"galleries"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 06 Aug 2023 13:00:03 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 06 Aug 2023 13:00:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"galleries\": [\n        {\n            \"id\": 44,\n            \"photo\": \"http://127.0.0.1:8000/uploads/gallery/1691326769.LOGO-01.png\",\n            \"created_at\": \"2023-08-06T12:59:29.000000Z\",\n            \"updated_at\": \"2023-08-06T12:59:29.000000Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "ContactUs",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "M Mohsen",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "m.mohsen@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "01111111111",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "title",
+									"type": "text"
+								},
+								{
+									"key": "subject",
+									"value": "this is subject",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{bollaris_url}}pt/api/contactus",
+							"host": [
+								"{{bollaris_url}}pt"
+							],
+							"path": [
+								"api",
+								"contactus"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ContactUs Validation Errors",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{bollaris_url}}pt/api/contactus",
+									"host": [
+										"{{bollaris_url}}pt"
+									],
+									"path": [
+										"api",
+										"contactus"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 07 Aug 2023 08:40:41 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 07 Aug 2023 08:40:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": {\n        \"name\": [\n            \"La name Se requiere campo.\"\n        ],\n        \"email\": [\n            \"La email Se requiere campo.\"\n        ],\n        \"phone\": [\n            \"La phone Se requiere campo.\"\n        ],\n        \"title\": [\n            \"La title Se requiere campo.\"\n        ],\n        \"subject\": [\n            \"La subject Se requiere campo.\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "ContactUs Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "M Mohsen",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "m.mohsen@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "01111111111",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "title",
+											"type": "text"
+										},
+										{
+											"key": "subject",
+											"value": "this is subject",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{bollaris_url}}pt/api/contactus",
+									"host": [
+										"{{bollaris_url}}pt"
+									],
+									"path": [
+										"api",
+										"contactus"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 07 Aug 2023 08:42:13 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 07 Aug 2023 08:42:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Creado con éxito . . . \"\n}"
+						}
+					]
+				},
+				{
+					"name": "Facilites",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{bollaris_url}}pt/api/facilites",
+							"host": [
+								"{{bollaris_url}}pt"
+							],
+							"path": [
+								"api",
+								"facilites"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Facilites Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{bollaris_url}}pt/api/facilites",
+									"host": [
+										"{{bollaris_url}}pt"
+									],
+									"path": [
+										"api",
+										"facilites"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 08 Aug 2023 13:03:21 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 08 Aug 2023 13:03:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"facilites\": [\n        {\n            \"id\": 4,\n            \"main_photo\": \"http://127.0.0.1:8000/uploads/facilites/1691492271.LOGO-01.png\",\n            \"created_at\": \"2023-08-08T10:44:54.000000Z\",\n            \"updated_at\": \"2023-08-08T10:57:53.000000Z\",\n            \"title\": \"asdasd edit\",\n            \"description\": \"Ex eius culpa, anim .asd edit\",\n            \"photos\": [\n                {\n                    \"id\": 16,\n                    \"facilite_id\": 4,\n                    \"photo\": \"http://127.0.0.1:8000/uploads/facilites/1691492215.success1.png\",\n                    \"created_at\": \"2023-08-08T10:56:58.000000Z\",\n                    \"updated_at\": \"2023-08-08T10:56:58.000000Z\"\n                },\n                {\n                    \"id\": 17,\n                    \"facilite_id\": 4,\n                    \"photo\": \"http://127.0.0.1:8000/uploads/facilites/1691492215.news1.png\",\n                    \"created_at\": \"2023-08-08T10:56:59.000000Z\",\n                    \"updated_at\": \"2023-08-08T10:56:59.000000Z\"\n                },\n                {\n                    \"id\": 18,\n                    \"facilite_id\": 4,\n                    \"photo\": \"http://127.0.0.1:8000/uploads/facilites/1691492245.football1.png\",\n                    \"created_at\": \"2023-08-08T10:57:53.000000Z\",\n                    \"updated_at\": \"2023-08-08T10:57:53.000000Z\"\n                },\n                {\n                    \"id\": 19,\n                    \"facilite_id\": 4,\n                    \"photo\": \"http://127.0.0.1:8000/uploads/facilites/1691498595.news-reporter1.png\",\n                    \"created_at\": \"2023-08-08T12:43:17.000000Z\",\n                    \"updated_at\": \"2023-08-08T12:43:17.000000Z\"\n                },\n                {\n                    \"id\": 20,\n                    \"facilite_id\": 4,\n                    \"photo\": \"http://127.0.0.1:8000/uploads/facilites/1691498609.trophy(1)1.png\",\n                    \"created_at\": \"2023-08-08T12:43:30.000000Z\",\n                    \"updated_at\": \"2023-08-08T12:43:30.000000Z\"\n                },\n                {\n                    \"id\": 21,\n                    \"facilite_id\": 4,\n                    \"photo\": \"http://127.0.0.1:8000/uploads/facilites/1691498647.default.png\",\n                    \"created_at\": \"2023-08-08T12:44:09.000000Z\",\n                    \"updated_at\": \"2023-08-08T12:44:09.000000Z\"\n                }\n            ],\n            \"translations\": [\n                {\n                    \"id\": 10,\n                    \"facilite_id\": 4,\n                    \"locale\": \"en\",\n                    \"title\": \"Voluptatibus dolor easd edit\",\n                    \"description\": \"Dolore totam dolorem.asda edit\",\n                    \"created_at\": \"2023-08-08T10:44:54.000000Z\",\n                    \"updated_at\": \"2023-08-08T10:57:53.000000Z\"\n                },\n                {\n                    \"id\": 11,\n                    \"facilite_id\": 4,\n                    \"locale\": \"es\",\n                    \"title\": \"Natus quia asperioreasd edit\",\n                    \"description\": \"Ad qui ut optio, nat.asda edit\",\n                    \"created_at\": \"2023-08-08T10:44:54.000000Z\",\n                    \"updated_at\": \"2023-08-08T10:57:53.000000Z\"\n                },\n                {\n                    \"id\": 12,\n                    \"facilite_id\": 4,\n                    \"locale\": \"pt\",\n                    \"title\": \"asdasd edit\",\n                    \"description\": \"Ex eius culpa, anim .asd edit\",\n                    \"created_at\": \"2023-08-08T10:44:54.000000Z\",\n                    \"updated_at\": \"2023-08-08T10:57:53.000000Z\"\n                }\n            ]\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Sideseeings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{bollaris_url}}pt/api/sideseeings",
+							"host": [
+								"{{bollaris_url}}pt"
+							],
+							"path": [
+								"api",
+								"sideseeings"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Sideseeings Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{bollaris_url}}pt/api/sideseeings",
+									"host": [
+										"{{bollaris_url}}pt"
+									],
+									"path": [
+										"api",
+										"sideseeings"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 08 Aug 2023 13:04:23 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 08 Aug 2023 13:04:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"sideseeing\": [\n        {\n            \"id\": 5,\n            \"main_photo\": \"http://127.0.0.1:8000/uploads/sideseeing/1691498153.LOGO-01.png\",\n            \"created_at\": \"2023-08-08T12:35:55.000000Z\",\n            \"updated_at\": \"2023-08-08T12:35:55.000000Z\",\n            \"title\": \"Facere deleniti et s\",\n            \"short_description\": \"Optio debitis volup\",\n            \"long_description\": \"Harum iste est accus.\",\n            \"photos\": [\n                {\n                    \"id\": 29,\n                    \"side_seeing_id\": 5,\n                    \"photo\": \"http://127.0.0.1:8000/uploads/sideseeing/1691498143.social-media(1)1.png\",\n                    \"created_at\": \"2023-08-08T12:35:55.000000Z\",\n                    \"updated_at\": \"2023-08-08T12:35:55.000000Z\"\n                },\n                {\n                    \"id\": 30,\n                    \"side_seeing_id\": 5,\n                    \"photo\": \"http://127.0.0.1:8000/uploads/sideseeing/1691498144.Gamer_new@3x.png\",\n                    \"created_at\": \"2023-08-08T12:35:55.000000Z\",\n                    \"updated_at\": \"2023-08-08T12:35:55.000000Z\"\n                },\n                {\n                    \"id\": 31,\n                    \"side_seeing_id\": 5,\n                    \"photo\": \"http://127.0.0.1:8000/uploads/sideseeing/1691498149.success1.png\",\n                    \"created_at\": \"2023-08-08T12:35:55.000000Z\",\n                    \"updated_at\": \"2023-08-08T12:35:55.000000Z\"\n                },\n                {\n                    \"id\": 32,\n                    \"side_seeing_id\": 5,\n                    \"photo\": \"http://127.0.0.1:8000/uploads/sideseeing/1691498149.news1.png\",\n                    \"created_at\": \"2023-08-08T12:35:55.000000Z\",\n                    \"updated_at\": \"2023-08-08T12:35:55.000000Z\"\n                },\n                {\n                    \"id\": 33,\n                    \"side_seeing_id\": 5,\n                    \"photo\": \"http://127.0.0.1:8000/uploads/sideseeing/1691498149.news-reporter1.png\",\n                    \"created_at\": \"2023-08-08T12:35:56.000000Z\",\n                    \"updated_at\": \"2023-08-08T12:35:56.000000Z\"\n                },\n                {\n                    \"id\": 36,\n                    \"side_seeing_id\": 5,\n                    \"photo\": \"http://127.0.0.1:8000/uploads/sideseeing/1691498738.default.png\",\n                    \"created_at\": \"2023-08-08T12:45:41.000000Z\",\n                    \"updated_at\": \"2023-08-08T12:45:41.000000Z\"\n                }\n            ],\n            \"translations\": [\n                {\n                    \"id\": 1,\n                    \"side_seeing_id\": 5,\n                    \"locale\": \"en\",\n                    \"title\": \"Animi quasi magnam\",\n                    \"short_description\": \"Odit officia unde qu\",\n                    \"long_description\": \"In aute amet, offici.\",\n                    \"created_at\": \"2023-08-08T12:35:55.000000Z\",\n                    \"updated_at\": \"2023-08-08T12:38:45.000000Z\"\n                },\n                {\n                    \"id\": 2,\n                    \"side_seeing_id\": 5,\n                    \"locale\": \"es\",\n                    \"title\": \"Sit placeat volupt\",\n                    \"short_description\": \"Assumenda veniam pa\",\n                    \"long_description\": \"Fugiat, eveniet, quo.\",\n                    \"created_at\": \"2023-08-08T12:35:55.000000Z\",\n                    \"updated_at\": \"2023-08-08T12:38:45.000000Z\"\n                },\n                {\n                    \"id\": 3,\n                    \"side_seeing_id\": 5,\n                    \"locale\": \"pt\",\n                    \"title\": \"Facere deleniti et s\",\n                    \"short_description\": \"Optio debitis volup\",\n                    \"long_description\": \"Harum iste est accus.\",\n                    \"created_at\": \"2023-08-08T12:35:55.000000Z\",\n                    \"updated_at\": \"2023-08-08T12:38:45.000000Z\"\n                }\n            ]\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Subscribe To NewsLetters",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "user2@mail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{bollaris_url}}en/api/subscribe",
+							"host": [
+								"{{bollaris_url}}en"
+							],
+							"path": [
+								"api",
+								"subscribe"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Subscribe To NewsLetters Validation Errors",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{bollaris_url}}en/api/subscribe",
+									"host": [
+										"{{bollaris_url}}en"
+									],
+									"path": [
+										"api",
+										"subscribe"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 14 Aug 2023 09:31:13 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 14 Aug 2023 09:31:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": {\n        \"email\": [\n            \"The email field is required.\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "Subscribe To NewsLetters Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "user@mail.com",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{bollaris_url}}en/api/subscribe",
+									"host": [
+										"{{bollaris_url}}en"
+									],
+									"path": [
+										"api",
+										"subscribe"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 14 Aug 2023 09:31:40 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 14 Aug 2023 09:31:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Subscribed Successfully . . .\"\n}"
+						},
+						{
+							"name": "Subscribe To NewsLetters  Subscribed Before",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "user@mail.com",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{bollaris_url}}en/api/subscribe",
+									"host": [
+										"{{bollaris_url}}en"
+									],
+									"path": [
+										"api",
+										"subscribe"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 14 Aug 2023 09:33:00 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 14 Aug 2023 09:33:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": {\n        \"email\": [\n            \"The email has already been taken.\"\n        ]\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
